@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="User" type="org.springframework.samples.mvc.basic.account.model.User" />
+		<typeAlias alias="Role" type="org.springframework.samples.mvc.basic.account.model.Role" />
+		<typeAlias alias="Authority" type="org.springframework.samples.mvc.basic.account.model.Authority" />
+	</typeAliases>
+    
+    <!-- 指定数据库分页方言Dialect, 其它方言:OracleDialect,SQLServerDialect,SybaseDialect,DB2Dialect,PostgreSQLDialect,MySQLDialect,DerbyDialect,HSQLDialect-->
+
+    <plugins>
+		<plugin interceptor="org.springframework.samples.mvc.basic.account.OffsetLimitInterceptor">
+			<property name="dialectClass" value="org.springframework.samples.mvc.basic.account.jdbc.dialect.H2Dialect"/>
+		</plugin>
+	</plugins>
+
+    <!-- 数据源通过spring注入 -->
+    <!-- 
+    <properties resource="jdbc.properties"/>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+     -->
+    <!-- mapper文件的装载通过spring的mapperLocations指定 --> 
+	<!-- 
+    <mappers>
+        <mapper resource="com/company/project/model/mapper/UserInfoMapper.xml" />
+    </mappers>
+    -->
+</configuration>

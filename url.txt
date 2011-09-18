@@ -1,0 +1,54 @@
+http://codemunchies.com/2010/07/spring-mvc-form-validation-with-hibernate-validator/
+
+http://blog.csdn.net/zjysource/archive/2010/03/29/5427342.aspx
+
+
+http://www.52css.com/article.asp?id=490
+
+国际化插件
+jinto - http://www.guh-software.de/eclipse/
+
+http://blog.springsource.com/2009/11/17/spring-3-type-conversion-and-validation/
+
+
+http://www.javaeye.com/topic/743651
+
+http://blog.csdn.net/zjysource/archive/2010/06/12/5667586.aspx
+
+
+http://www.openscope.net/2010/02/08/spring-mvc-3-0-and-jsr-303-aka-javax-validation/#comment-347
+
+
+http://www.dil.univ-mrs.fr/~massat/ens/java/doc-spring-mvc/index.html
+
+
+http://zjnbshifox.javaeye.com/?show_full=true
+
+http://codemunchies.com/2010/07/spring-mvc-form-validation-with-hibernate-validator/
+
+
+http://www.daniel-journey.com/archives/214
+
+spring security 3.0 使用 jcaptcha
+http://haven123.javaeye.com/blog/663844
+
+http://www.blogjava.net/youxia/archive/2009/08/24/292421.html
+
+http://heraclitusonsoftware.wordpress.com/software-development/spring/simple-web-application-with-spring-security-part-4/
+
+
+http://forum.springsource.org/showthread.php?t=66748
+
+http://mxdba321123.javaeye.com/blog/650584
+
+分布式设计与开发（四）------数据拆分
+http://blog.csdn.net/cutesource/archive/2010/08/26/5841244.aspx
+
+
+Web 2.0应用客户端性能问题十大根源
+http://www.infoq.com/cn/news/2010/08/web-performance-root
+
+Spring3 MVC Hello World（3）使用JSON进行前后台数据交互
+http://blog.liuweifeng.net/archives/407
+
+http://stackoverflow.com/questions/2998392/spring-mvc-3-how-come-responsebody-method-renders-a-jstlview

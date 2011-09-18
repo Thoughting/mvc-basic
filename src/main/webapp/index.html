@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+
+	<title>Layout with Accordion</title>
+
+	<link rel="stylesheet" type="text/css" href="css/themes/layout-default-latest.css" />
+	<link rel="stylesheet" type="text/css" href="css/themes/redmond/jquery-ui-1.8.2.custom.css" />
+	<!-- CUSTOMIZE/OVERRIDE THE DEFAULT CSS -->
+	<style type="text/css">
+
+	/* remove padding and scrolling from elements that contain an Accordion OR a content-div */
+	.ui-layout-center ,	/* has content-div */
+	.ui-layout-west ,	/* has Accordion */
+	.ui-layout-center P.ui-layout-content {
+		line-height:	1.4em;
+		margin:			0; /* remove top/bottom margins from <P> used as content-div */
+	}
+	h3, h4 { /* Headers & Footer in Center & East panes */
+		font-size:		1.1em;
+		background:		#EEF;
+		border:			1px solid #BBB;
+		border-width:	0 0 1px;
+		padding:		7px 10px;
+		margin:			0;
+	}
+	</style>
+
+	<!-- REQUIRED scripts for layout widget -->
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.layout.js"></script>
+
+  <script type="text/javascript" src="js/themeswitchertool.js"></script> 
+	<script type="text/javascript" src="js/debug.js"></script>
+
+	<script type="text/javascript">
+
+	var myLayout, $westAccordion, $eastAccordion; // init global vars
+
+	function resizeWidgets () {
+		//myLayout.resizeAll();
+		$westAccordion.accordion("resize");
+	};
+
+
+	$(document).ready( function() {
+
+		myLayout = $('body').layout({
+			west__size:			300
+			// RESIZE Accordion widget when panes resize
+		,	west__onresize:		function () { $("#accordion1").accordion("resize"); }
+		});
+
+		// ACCORDION - in the West pane
+		$westAccordion = $("#accordion1").accordion({
+			fillSpace:	true
+		});
+
+
+		// THEME SWITCHER
+		addThemeSwitcher('.ui-layout-north',{ top: '12px', right: '5px' });
+		// if a new theme is applied, it could change the height of some content,
+		// so call resizeAll to 'correct' any header/footer heights affected
+		// NOTE: this is only necessary because we are changing CSS *AFTER LOADING* using themeSwitcher
+		setTimeout( resizeWidgets, 1000 ); /* allow time for browser to re-render with new theme */
+
+	});
+
+	</script>
+
+</head>
+<body>
+
+<div class="ui-layout-north ui-widget-content" style="display: none;">
+	<div style="float: right; margin-right: 160px;">
+		<button onClick="resizeWidgets()">Resize</button> &nbsp;
+		<button onClick="removeUITheme(); resizeWidgets()">Remove Theme</button>
+	</div>
+	North Pane
+</div>
+
+<div class="ui-layout-south ui-widget-content ui-state-error" style="display: none;"> South Pane </div>
+
+<div class="ui-layout-center" style="display: none;"> 
+	<div class="jqgtabs ui-tabs ui-widget ui-widget-content ui-corner-all" id="tabs">
+			<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+				<li class="ui-state-default ui-corner-top"><a href="#tabs-1">jqGrid 3.7</a></li>
+			<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#t31"><span>JSON Mapping</span></a><span title="Close Tab" class="ui-tabs-close ui-icon ui-icon-close"></span></li></ul>
+			<div style="font-size: 12px;" id="tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"> jqGrid 3.7 adds a local manipulation, searching, sorting, pagging and morre...<br>
+			<br>
+			Enjoy
+			</div>
+		<div id="t31" class="ui-tabs-panel ui-widget-content ui-corner-bottom"><div style="font-size: 12px;">
+This example accepting json data in the format of type:<br>
+{ total: xxx, page: yyy, records: zzz, rows: [ <br>
+{name1:”Row01″,name2:”Row 11″,name3:”Row 12″,name4:”Row 13″,name5:”Row 14″}, <br>
+...<br>
+Note the MySQL PHP code.
+</div>
+<br>
+<div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="gbox_jsonmap" dir="ltr" style="width: 635px;"><div id="lui_jsonmap" class="ui-widget-overlay jqgrid-overlay"></div><div id="load_jsonmap" class="loading ui-state-default ui-state-active" style="display: none;">Loading...</div><div class="ui-jqgrid-view" id="gview_jsonmap" style="width: 635px;"><div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix"><a href="javascript:void(0)" role="link" class="ui-jqgrid-titlebar-close HeaderButton" style="right: 0px;"><span class="ui-icon ui-icon-circle-triangle-n"></span></a><span class="ui-jqgrid-title">JSON Mapping</span></div><div style="width: 635px;" class="ui-state-default ui-jqgrid-hdiv"><div class="ui-jqgrid-hbox"><table cellspacing="0" cellpadding="0" border="0" aria-labelledby="gbox_jsonmap" role="grid" style="width: 635px;" class="ui-jqgrid-htable"><thead><tr role="rowheader" class="ui-jqgrid-labels"><th class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" id="jsonmap_id" style="width: 52px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_id" class="ui-jqgrid-sortable">Inv No<span style="" class="s-ico"><span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span><span class="ui-grid-ico-sort ui-icon-desc ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span></span></div></th><th class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" id="jsonmap_invdate" style="width: 85px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_invdate" class="ui-jqgrid-sortable">Date<span style="display: none;" class="s-ico"><span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span><span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span></span></div></th><th class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" id="jsonmap_name" style="width: 94px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_name" class="ui-jqgrid-sortable">Client<span style="display: none;" class="s-ico"><span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span><span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span></span></div></th><th class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" id="jsonmap_amount" style="width: 76px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_amount" class="ui-jqgrid-sortable">Amount<span style="display: none;" class="s-ico"><span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span><span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span></span></div></th><th class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" id="jsonmap_tax" style="width: 76px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_tax" class="ui-jqgrid-sortable">Tax<span style="display: none;" class="s-ico"><span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span><span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span></span></div></th><th class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" id="jsonmap_total" style="width: 76px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_total" class="ui-jqgrid-sortable">Total<span style="display: none;" class="s-ico"><span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span><span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span></span></div></th><th class="ui-state-default ui-th-column ui-th-ltr" role="columnheader" id="jsonmap_note" style="width: 141px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_note" class="ui-jqgrid-sortable">Notes<span style="display: none;" class="s-ico"><span class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr" sort="asc"></span><span class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr" sort="desc"></span></span></div></th></tr></thead></table></div></div><div class="ui-jqgrid-bdiv" style="height: 100%; width: 635px;"><div style="position: relative;"><div></div><table cellspacing="0" cellpadding="0" border="0" id="jsonmap" role="grid" aria-multiselectable="false" aria-labelledby="gbox_jsonmap" class="ui-jqgrid-btable" style="width: 635px;"><tbody><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="13"><td aria-describedby="jsonmap_id" title="13" style="width: 52px;" role="gridcell">13</td><td aria-describedby="jsonmap_invdate" title="2007-10-06" style="width: 85px;" role="gridcell">2007-10-06</td><td aria-describedby="jsonmap_name" title="Client 3" style="width: 94px;" role="gridcell">Client 3</td><td aria-describedby="jsonmap_amount" title="1000.00" style="text-align: right; width: 76px;" role="gridcell">1000.00</td><td aria-describedby="jsonmap_tax" title="0.00" style="text-align: right; width: 76px;" role="gridcell">0.00</td><td aria-describedby="jsonmap_total" title="1000.00" style="text-align: right; width: 76px;" role="gridcell">1000.00</td><td aria-describedby="jsonmap_note" title="" style="width: 141px;" role="gridcell">&nbsp;</td></tr><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="12"><td aria-describedby="jsonmap_id" title="12" style="" role="gridcell">12</td><td aria-describedby="jsonmap_invdate" title="2007-10-06" style="" role="gridcell">2007-10-06</td><td aria-describedby="jsonmap_name" title="Client 2" style="" role="gridcell">Client 2</td><td aria-describedby="jsonmap_amount" title="700.00" style="text-align: right;" role="gridcell">700.00</td><td aria-describedby="jsonmap_tax" title="140.00" style="text-align: right;" role="gridcell">140.00</td><td aria-describedby="jsonmap_total" title="840.00" style="text-align: right;" role="gridcell">840.00</td><td aria-describedby="jsonmap_note" title="" style="" role="gridcell">&nbsp;</td></tr><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="11"><td aria-describedby="jsonmap_id" title="11" style="" role="gridcell">11</td><td aria-describedby="jsonmap_invdate" title="2007-10-06" style="" role="gridcell">2007-10-06</td><td aria-describedby="jsonmap_name" title="Client 1" style="" role="gridcell">Client 1</td><td aria-describedby="jsonmap_amount" title="600.00" style="text-align: right;" role="gridcell">600.00</td><td aria-describedby="jsonmap_tax" title="120.00" style="text-align: right;" role="gridcell">120.00</td><td aria-describedby="jsonmap_total" title="720.00" style="text-align: right;" role="gridcell">720.00</td><td aria-describedby="jsonmap_note" title="" style="" role="gridcell">&nbsp;</td></tr><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="10"><td aria-describedby="jsonmap_id" title="10" style="" role="gridcell">10</td><td aria-describedby="jsonmap_invdate" title="2007-10-06" style="" role="gridcell">2007-10-06</td><td aria-describedby="jsonmap_name" title="Client 2" style="" role="gridcell">Client 2</td><td aria-describedby="jsonmap_amount" title="100.00" style="text-align: right;" role="gridcell">100.00</td><td aria-describedby="jsonmap_tax" title="20.00" style="text-align: right;" role="gridcell">20.00</td><td aria-describedby="jsonmap_total" title="120.00" style="text-align: right;" role="gridcell">120.00</td><td aria-describedby="jsonmap_note" title="" style="" role="gridcell">&nbsp;</td></tr><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="9"><td aria-describedby="jsonmap_id" title="9" style="" role="gridcell">9</td><td aria-describedby="jsonmap_invdate" title="2007-10-06" style="" role="gridcell">2007-10-06</td><td aria-describedby="jsonmap_name" title="Client 1" style="" role="gridcell">Client 1</td><td aria-describedby="jsonmap_amount" title="200.00" style="text-align: right;" role="gridcell">200.00</td><td aria-describedby="jsonmap_tax" title="40.00" style="text-align: right;" role="gridcell">40.00</td><td aria-describedby="jsonmap_total" title="240.00" style="text-align: right;" role="gridcell">240.00</td><td aria-describedby="jsonmap_note" title="" style="" role="gridcell">&nbsp;</td></tr><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="8"><td aria-describedby="jsonmap_id" title="8" style="" role="gridcell">8</td><td aria-describedby="jsonmap_invdate" title="2007-10-06" style="" role="gridcell">2007-10-06</td><td aria-describedby="jsonmap_name" title="Client 3" style="" role="gridcell">Client 3</td><td aria-describedby="jsonmap_amount" title="200.00" style="text-align: right;" role="gridcell">200.00</td><td aria-describedby="jsonmap_tax" title="0.00" style="text-align: right;" role="gridcell">0.00</td><td aria-describedby="jsonmap_total" title="200.00" style="text-align: right;" role="gridcell">200.00</td><td aria-describedby="jsonmap_note" title="" style="" role="gridcell">&nbsp;</td></tr><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="7"><td aria-describedby="jsonmap_id" title="7" style="" role="gridcell">7</td><td aria-describedby="jsonmap_invdate" title="2007-10-05" style="" role="gridcell">2007-10-05</td><td aria-describedby="jsonmap_name" title="Client 2" style="" role="gridcell">Client 2</td><td aria-describedby="jsonmap_amount" title="120.00" style="text-align: right;" role="gridcell">120.00</td><td aria-describedby="jsonmap_tax" title="12.00" style="text-align: right;" role="gridcell">12.00</td><td aria-describedby="jsonmap_total" title="134.00" style="text-align: right;" role="gridcell">134.00</td><td aria-describedby="jsonmap_note" title="" style="" role="gridcell">&nbsp;</td></tr><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="6"><td aria-describedby="jsonmap_id" title="6" style="" role="gridcell">6</td><td aria-describedby="jsonmap_invdate" title="2007-10-05" style="" role="gridcell">2007-10-05</td><td aria-describedby="jsonmap_name" title="Client 1" style="" role="gridcell">Client 1</td><td aria-describedby="jsonmap_amount" title="50.00" style="text-align: right;" role="gridcell">50.00</td><td aria-describedby="jsonmap_tax" title="10.00" style="text-align: right;" role="gridcell">10.00</td><td aria-describedby="jsonmap_total" title="60.00" style="text-align: right;" role="gridcell">60.00</td><td aria-describedby="jsonmap_note" title="" style="" role="gridcell">&nbsp;</td></tr><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="5"><td aria-describedby="jsonmap_id" title="5" style="" role="gridcell">5</td><td aria-describedby="jsonmap_invdate" title="2007-10-05" style="" role="gridcell">2007-10-05</td><td aria-describedby="jsonmap_name" title="Client 3" style="" role="gridcell">Client 3</td><td aria-describedby="jsonmap_amount" title="100.00" style="text-align: right;" role="gridcell">100.00</td><td aria-describedby="jsonmap_tax" title="0.00" style="text-align: right;" role="gridcell">0.00</td><td aria-describedby="jsonmap_total" title="100.00" style="text-align: right;" role="gridcell">100.00</td><td aria-describedby="jsonmap_note" title="no tax at all" style="" role="gridcell">no tax at all</td></tr><tr class="ui-widget-content jqgrow ui-row-ltr" role="row" id="4"><td aria-describedby="jsonmap_id" title="4" style="" role="gridcell">4</td><td aria-describedby="jsonmap_invdate" title="2007-10-04" style="" role="gridcell">2007-10-04</td><td aria-describedby="jsonmap_name" title="Client 3" style="" role="gridcell">Client 3</td><td aria-describedby="jsonmap_amount" title="150.00" style="text-align: right;" role="gridcell">150.00</td><td aria-describedby="jsonmap_tax" title="0.00" style="text-align: right;" role="gridcell">0.00</td><td aria-describedby="jsonmap_total" title="150.00" style="text-align: right;" role="gridcell">150.00</td><td aria-describedby="jsonmap_note" title="no tax" style="" role="gridcell">no tax</td></tr></tbody></table></div></div></div><div id="rs_mjsonmap" class="ui-jqgrid-resize-mark">&nbsp;</div><div id="pjmap" style="width: 635px;" class="ui-state-default ui-jqgrid-pager ui-corner-bottom" dir="ltr"><div role="group" class="ui-pager-control" id="pg_pjmap"><table cellspacing="0" cellpadding="0" border="0" role="row" style="width: 100%; table-layout: fixed;" class="ui-pg-table"><tbody><tr><td align="left" id="pjmap_left"><table cellspacing="0" cellpadding="0" border="0" style="float: left; table-layout: auto;" class="ui-pg-table navtable"><tbody><tr><td class="ui-pg-button ui-corner-all" title="Find records" id="search_jsonmap"><div class="ui-pg-div"><span class="ui-icon ui-icon-search"></span></div></td><td class="ui-pg-button ui-corner-all" title="Reload Grid" id="refresh_jsonmap"><div class="ui-pg-div"><span class="ui-icon ui-icon-refresh"></span></div></td></tr></tbody></table></td><td align="center" style="white-space: pre; width: 250px;" id="pjmap_center"><table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table" style="table-layout: auto;"><tbody><tr><td class="ui-pg-button ui-corner-all ui-state-disabled" id="first" style="cursor: default;"><span class="ui-icon ui-icon-seek-first"></span></td><td class="ui-pg-button ui-corner-all ui-state-disabled" id="prev" style="cursor: default;"><span class="ui-icon ui-icon-seek-prev"></span></td><td style="width: 4px;" class="ui-pg-button ui-state-disabled"><span class="ui-separator"></span></td><td dir="ltr">Page <input type="text" role="textbox" value="0" maxlength="7" size="2" class="ui-pg-input"> of <span id="sp_1">2</span></td><td style="width: 4px;" class="ui-pg-button ui-state-disabled"><span class="ui-separator"></span></td><td class="ui-pg-button ui-corner-all" id="next" style="cursor: default;"><span class="ui-icon ui-icon-seek-next"></span></td><td class="ui-pg-button ui-corner-all" id="last"><span class="ui-icon ui-icon-seek-end"></span></td><td dir="ltr"><select role="listbox" class="ui-pg-selbox"><option selected="" value="10" role="option">10</option><option value="20" role="option">20</option><option value="30" role="option">30</option></select></td></tr></tbody></table></td><td align="right" id="pjmap_right"><div class="ui-paging-info" style="text-align: right;" dir="ltr">View 1 - 10 of 13</div></td></tr></tbody></table></div></div></div>
+
+
+<br>
+					</div></div>
+  <!--
+	<h3 class="ui-widget-header">Center Pane</h3>
+	<p class="ui-layout-content ui-widget-content">
+		<b>NOTE</b>: As of UI v1.7.1, the Accordion widget has a 'resize' method.
+		If you were previously using the patched version of ui.accordion, 
+		you should upgrade to the latest versions of jQuery and jQuery UI.
+	</p>
+	-->
+</div>
+
+<div class="ui-layout-west" style="display: none;">
+	<div id="accordion1" class="basic">
+
+			<h3><a href="#">Section 1</a></h3>
+			<div>
+				<li><a href="http://www.pivotx.net/">PivotX</a></li>
+				<li><a href="http://www.wordpress.org/">WordPress</a></li>
+				<li><a href="http://www.textpattern.com/">Textpattern</a></li>
+				<li><a href="http://typosphere.org/">Typo</a></li>
+			</div>
+
+			<h3><a href="#">系统管理</a></h3>
+			<div>
+				<li><a href="account/user" target="I2">帐号列表</a></li>
+				<li><a href="account/role" target="I2">角色列表</a></li>
+				<li><a href="account/authority" target="I2">权限列表</a></li>
+			</div>
+
+			<h3><a href="#">Section 3</a></h3>
+			<div>
+				<li><a href="http://www.apple.com/">Apple</a></li>
+				<li><a href="http://www.nikon.com/">Nikon</a></li>
+				<li><a href="http://www.xbox.com/en-US/">XBOX360</a></li>
+				<li><a href="http://www.nintendo.com/">Nintendo</a></li>
+			</div>
+
+			<h3><a href="#">Section 4</a></h3>
+			<div>
+				<li><a href="http://search.yahoo.com/">Yahoo!</a></li>
+				<li><a href="http://www.google.com/">Google</a></li>
+				<li><a href="http://www.ask.com/">Ask.com</a></li>
+				<li><a href="http://www.live.com/?searchonly=true">Live Search</a></li>
+			</div>
+
+	</div>
+</div>
+
+
+
+</body>
+</html> 

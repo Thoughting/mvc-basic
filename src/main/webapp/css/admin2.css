@@ -1,0 +1,420 @@
+body{ 
+
+SCROLLBAR-FACE-COLOR: #97B0D9; 
+
+SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+
+SCROLLBAR-SHADOW-COLOR: #ffffff; 
+
+SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+
+SCROLLBAR-ARROW-COLOR: #5779B2; 
+
+SCROLLBAR-TRACK-COLOR: #ffffff;
+
+SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+
+}
+td {  font-size: 12px}
+a:link {
+	color: #000000;
+	text-decoration: none;
+
+}
+a:visited {
+	color: #000000;
+	text-decoration: none;
+
+}
+a:hover {
+	color: #003399;
+}
+button {
+	background-color: #EEEEEE;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E1E1E1;
+	border-right-color: #BOBOBO;
+	border-bottom-color: #BOBOBO;
+	border-left-color: #E1E1E1;
+	font-size: 12px;
+	height: 16px;
+
+}
+.table-textfile {
+	font-size: 12px;
+	height: 16px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000033;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #000033;
+	vertical-align: middle;
+}
+
+.table-header-important {
+	font-weight: bolder;
+	color: #003366;
+}
+.table-alternate1 {
+	background-color: #F1F6FC;
+}
+
+.table-alternate2{
+	background-color: #FFFFFF;
+}
+.table-body {
+	border: 1px solid #377197;
+	background-color: #C2D2EC;
+
+}
+.table-body-content {
+	line-height: 18px;
+}
+
+.table-header{
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-left-color: #999999;
+	background-color: #C6DDF6;
+
+}
+
+.table-button {
+	font-size: 12px;
+	height: 17px;
+}
+.table-footer {
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #999999;
+	border-left-color: #999999;
+	background-color: #C6DDF6;
+
+}
+.table-footer-important {
+	color: #990000;
+	font-weight: normal;
+}
+.table-textarea {
+	width: 90%;
+}
+
+
+.color-border-table-menu {
+	background-color: #C2D2EC;
+	border-top: 0px solid #377197;
+	border-right: 1px solid #377197;
+	border-bottom: 1px solid #377197;
+	border-left: 1px solid #377197;
+}
+.line-menu {
+	background-color: #377197;
+}
+.line-menu2 {
+	background-color: #A5BAD1;
+}
+.font-public {
+	font-size: 12px;
+	font-weight: bolder;
+	color: #FFFFFF;
+}
+.color-bg-tr4 {
+	background-color: #FBFBFB;
+}
+
+.calendar {
+	color: #0033CC;
+}
+.search {
+	background-color: #F3F3F3;
+}
+button {
+	background-color: #EEEEEE;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E1E1E1;
+	border-right-color: #BOBOBO;
+	border-bottom-color: #BOBOBO;
+	border-left-color: #E1E1E1;
+	font-size: 12px;
+	height: 16px;
+
+}
+.button-td1 {
+	font-size: 12px;
+	color: #0A4D82;
+	height: 20px;
+	background-image: url(/pic/admin/button.gif);
+	border-top: 0px none;
+	border-right: 1px solid #000033;
+	border-bottom: 0px none;
+	border-left: 0px none;
+
+
+}
+.button-td2 {
+	background-color: #003399;
+	height: 16px;
+	border: 1px inset;
+	color: #FFFFFF;
+	background-position: 1px 1px;
+	font-size: 12px;
+
+}
+
+.textfield-table {
+	width: 90%;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #000000;
+
+
+}
+.button1 {
+	font-size: 12px;
+	height: 17px;
+}
+.font-td2 {
+	color: #CC0000;
+}
+.color-bg-line {
+	background-color: #D9D9D9;
+}
+.textfile2 {
+	font-size: 12px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000033;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #000033;
+}
+.textfile {
+	font-size: 12px;
+	height: 18px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000033;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #000033;
+
+}
+.textfile2 {
+	font-size: 12px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000033;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #000033;
+}
+.font-time {
+	font-size:12px;font-weight:bold;color:red;
+}
+.color-bg-tr {
+	background-color: #C6DDF6;
+}
+.color-bg-title {
+	background-image: url(/admin/pic/bg_title.jpg);
+
+}
+.font-title {
+	font-weight: bolder;
+	color: #003366;
+}
+.font-td2 {
+	color: #CC0000;
+}
+.color-bg-line {
+	background-color: #D9D9D9;
+}
+.color-bg-tr2 {
+	background-color: #FFFFFF;
+}
+.color-border-table {
+	border: 1px solid #377197;
+	background-color: #C2D2EC;
+
+}
+.color-border-title {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-left-color: #999999;
+}
+.color-bg-tr3 {
+	background-color: #F1F6FC;
+}
+button {
+	background-color: #EEEEEE;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #E1E1E1;
+	border-right-color: #BOBOBO;
+	border-bottom-color: #BOBOBO;
+	border-left-color: #E1E1E1;
+	font-size: 12px;
+	height: 16px;
+
+}
+.button-td1 {
+	font-size: 12px;
+	color: #0A4D82;
+	height: 20px;
+	background-image: url(/admin/pic/button.gif);
+	border-top: 0px none;
+	border-right: 1px solid #000033;
+	border-bottom: 0px none;
+	border-left: 0px none;
+
+
+}
+.button-td2 {
+	background-color: #003399;
+	height: 16px;
+	border: 1px inset;
+	color: #FFFFFF;
+	background-position: 1px 1px;
+	font-size: 12px;
+
+
+
+
+}
+.color-border-title2 {
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #999999;
+	border-left-color: #999999;
+	background-color: #C6DDF6;
+
+}
+.textfield-table {
+	width: 90%;
+}
+.button1 {
+	font-size: 12px;
+	height: 16px;
+}
+.font-prominent {
+	color: #990000;
+	font-weight: bolder;
+}
+.content-note{font-size:12px;padding:8px;line-height:25px;}
+.textfile-mul{
+	font-size: 12px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000033;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #000033;
+
+}
+.font-white{font-size:12px;color:white}
+body{ 
+
+SCROLLBAR-FACE-COLOR: #97B0D9; 
+
+SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+
+SCROLLBAR-SHADOW-COLOR: #ffffff; 
+
+
+SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+
+SCROLLBAR-ARROW-COLOR: #5779B2; 
+
+SCROLLBAR-TRACK-COLOR: #ffffff;
+
+SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+
+}
+

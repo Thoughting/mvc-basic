@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="org.springframework.samples.mvc.basic.account.model.mapper.AuthorityMapper">
+	<resultMap id="authorityResultMap" type="Authority">
+		<id property="id" column="id" />
+		<result property="name" column="name"/>
+	</resultMap>
+	
+	<select id="getAuthorityListByRoleId" parameterType="long" resultMap="authorityResultMap">        
+        SELECT a.* FROM ACCT_AUTHORITY a
+		left join ACCT_ROLE_AUTHORITY b
+		on a.id =b.authority_id
+		where b.role_id =#{role_id}     
+    </select>
+    
+    <select id="findAll" resultMap="authorityResultMap">        
+        SELECT id, name FROM ACCT_AUTHORITY    
+    </select>
+    
+    <select id="getAuthorityById" parameterType="long" resultMap="authorityResultMap">        
+        select id, name from ACCT_AUTHORITY  where id = #{id}        
+    </select>
+    
+    <insert id="insertAuthority" parameterType="Authority" useGeneratedKeys="true" keyProperty="id">
+		insert into ACCT_AUTHORITY (name) values (#{name})
+	</insert>
+
+    <update id="updateAuthority" parameterType="Authority">        
+        update ACCT_AUTHORITY  set  name=#{name}  where id = #{id}        
+    </update>
+    
+	<delete id="deleteAuthorityById" parameterType="long">
+		delete from ACCT_AUTHORITY where id = #{id}
+	</delete>
+	 
+</mapper>

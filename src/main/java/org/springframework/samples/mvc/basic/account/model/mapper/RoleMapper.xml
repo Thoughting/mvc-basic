@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="org.springframework.samples.mvc.basic.account.model.mapper.RoleMapper">
+	<resultMap id="roleResultMap" type="Role">
+		<id property="id" column="id" />
+		<result property="name" column="name"/>
+		<!-- 一对多配置 -->  
+        <collection property="authorityList" ofType="java.util.Set" select="getAuthorityListByRoleId" column="id"/>
+	</resultMap>
+	
+	<select id="getAll" parameterType="long" resultMap="roleResultMap">        
+        select id, name from ACCT_ROLE  
+    </select>
+    
+    <select id="getRoleListByUserId" parameterType="long" resultMap="roleResultMap">        
+        SELECT a.id, a.name FROM ACCT_ROLE a
+		left join ACCT_USER_ROLE  b
+		on a.id =b.role_id
+		where b.user_id =#{user_id}      
+    </select>
+    
+    <select id="getRoleById" parameterType="long" resultMap="roleResultMap">        
+        select id, name from ACCT_ROLE  where id = #{id}        
+    </select>
+    
+    <insert id="insertRole" parameterType="Role" useGeneratedKeys="true" keyProperty="id">
+		insert into ACCT_ROLE (name) values (#{name})
+	</insert>
+
+    <update id="updateRole" parameterType="Role">        
+        update ACCT_ROLE  set  name=#{name}  where id = #{id}        
+    </update>
+    
+	<delete id="deleteRoleById" parameterType="long">
+		delete from ACCT_ROLE where id = #{id}
+	</delete>
+	
+	<insert id="insertRoleAuthoritys" parameterType="map">
+		insert into ACCT_ROLE_Authority (role_id, authority_id) values (#{role_id},#{authority_id})
+	</insert>
+	<!--  
+	<delete id="deleteRoleAuthoritys" parameterType="Role">
+		delete from ACCT_ROLE_Authority where  role_id=#{role_id} and authority_id=#{authority_id})
+	</delete>
+	-->
+	<delete id="deleteRoleAuthoritysByRoleId" parameterType="long">
+		delete from ACCT_ROLE_Authority where  role_id=#{role_id}
+	</delete>
+    
+</mapper>

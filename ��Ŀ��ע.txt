@@ -1,0 +1,18 @@
+1.启动h2数据库：
+
+D:\workspace\mvc-basic\tools\h2>start-db.bat
+
+2.启动jetty:
+D:\workspace\mvc-basic>mvn jetty:run
+
+3.访问主页：
+http://localhost:8080/mvc-basic/
+
+4. 打包：
+mvn package
+
+下载依赖包的源代码
+mvn dependency:sources 
+
+
+通常情况下，使用maven增加依赖时，它只下载项目依赖包的二进制文件，要想在同时下载源代码包值需要增加一个参数：mvn eclipse:eclipse -DdownloadSources=true;
