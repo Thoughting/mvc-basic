@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="mvc-basic" default="init-db" xmlns:artifact="antlib:org.apache.maven.artifact.ant" basedir="../../">
-
-	<artifact:dependencies pathId="project.lib">
+	
+	<echo message="Use Maven2 to manage jar." />
+	<artifact:dependencies settingsfile="D:/apache-maven-2.0.9/conf/settings.xml" pathId="project.lib">
 		<pom file="pom.xml" />
 	</artifact:dependencies>
 
-	<property file="src/main/resources/application.properties" />
+	<property file="src/main/resources/jdbc.properties" />
 
 	<property name="sql.type" value="h2" />
 	<property name="dbunit.datatype" value="org.dbunit.ext.h2.H2DataTypeFactory" />
@@ -19,7 +20,7 @@
 	<property name="dbunit.datatype" value="org.dbunit.ext.mysql.MySqlDataTypeFactory" />
 	-->
 
-	<property name="sql.dir" value="src/main/resources/sql/${sql.type}" />
+	<property name="sql.dir" value="src/main/sql/${sql.type}" />
 	<property name="dbunit.data.dir" value="src/test/resources/data" />
 
 	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="project.lib" />
