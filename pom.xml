@@ -267,12 +267,6 @@
 	<repositories>
 		<!-- For Hibernate Validator -->
 		<repository>
-			<id>public-thirdparty</id>
-			<name>synyx Maven Release Repository</name>			
-			<url>http://nexus.synyx.de/content/repositories/public-thirdparty</url>
-			<snapshots><enabled>false</enabled></snapshots>			
-		</repository>
-		<repository>
 			<id>org.jboss.repository.release</id>
 			<name>JBoss Maven Release Repository</name>			
 			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
